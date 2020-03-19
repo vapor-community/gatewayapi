@@ -42,11 +42,13 @@ func configure(_ app: Application) throws {
 }
 ```
 
-## Usage
+### Sending a SMS
 You can use the API client either through `Application` or `Request`
 
-### Application
+#### Application
 ```swift
+import GatewayAPI
+
 func configure(_ app: Application) throws {
     app.gatewayAPI.configuration = .environment
 
@@ -54,8 +56,10 @@ func configure(_ app: Application) throws {
 }
 ```
 
-### Request (inside controller)
+#### Request (inside controller)
 ```swift
+import GatewayAPI
+
 func sendSMS(req: Request) throws -> EventLoopFuture<Void> {
     return req.gatewayAPI.send("Text message": to: ["4510203040"], from: "Mads").transform(to: ())
 }
