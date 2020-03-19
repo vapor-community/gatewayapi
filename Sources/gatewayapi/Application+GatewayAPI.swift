@@ -14,7 +14,7 @@ extension Application {
                 application.storage[ConfigurationKey.self]
             }
             nonmutating set {
-                application.storage[ConfigurationKey] = newValue
+                application.storage[ConfigurationKey.self] = newValue
             }
         }
         
