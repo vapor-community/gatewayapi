@@ -29,8 +29,3 @@ extension Application {
     
     public var gatewayAPI: GatewayAPI { .init(application: self) }
 }
-
-// application.gatewayAPI.configuration = .environment
-// req.gatewayAPI.send()
-// application.gatewayAPI.client.send()
-// req.gatewayAPI.send()
