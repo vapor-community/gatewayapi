@@ -37,7 +37,7 @@ func configure(_ app: Application) throws {
     // Option 1: Use environment variable GATEWAYAPI_APIKEY
     app.gatewayAPI.configuration = .environment
 
-    // Options 2: Manual config  
+    // Option 2: Manual config  
     app.gatewayAPI.configuration = .init(apiKey: "api_key")
 }
 ```
