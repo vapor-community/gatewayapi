@@ -23,7 +23,11 @@ extension Application {
                 fatalError("GatewayAPI not configured, please use application.gatewayAPI.configuration = .environment in your configure function")
             }
             
-            return .init(eventLoop: application.eventLoopGroup.next(), httpClient: application.client.http, apiKey: configuration.apiKey)
+            return .init(
+                eventLoop: application.eventLoopGroup.next(),
+                httpClient: application.http.client.shared,
+                apiKey: configuration.apiKey
+            )
         }
     }
     

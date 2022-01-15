@@ -7,7 +7,10 @@ extension Request {
             fatalError("GatewayAPI not configured, please use application.gatewayAPI.configuration = .environment in your configure function")
         }
         
-        return .init(eventLoop: eventLoop, httpClient: application.client
-            .http, apiKey: configuration.apiKey)
+        return .init(
+            eventLoop: self.eventLoop,
+            httpClient: self.application.http.client.shared,
+            apiKey: configuration.apiKey
+        )
     }
 }
